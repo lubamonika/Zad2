@@ -31,7 +31,7 @@ public class Main {
         for (int i=0; i<ile; i++) {
         System.out.println("Podaj liczbę " + (i+1));
         liczby[i] = scanner.nextInt();
-        outputArray[i] = scanner.next();
+        //outputArray[i] = scanner.next();
         }
 
         switch (dzialanie) {
@@ -40,10 +40,8 @@ public class Main {
                 String output = "";
                 for (int i=0; i<ile; i++){
                     wynik += liczby[i];
-                    output += outputArray[i];
                 }
                 System.out.println(wynik);
-                System.out.println(output);
                 System.out.println("dodawanie");
                 break;
             case 2:

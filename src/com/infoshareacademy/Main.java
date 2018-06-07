@@ -2,6 +2,8 @@ package com.infoshareacademy;
 
 import java.util.Scanner;
 
+import static com.infoshareacademy.Operacja.dodawanie;
+
 public class Main {
 
 
@@ -31,30 +33,50 @@ public class Main {
         for (int i=0; i<ile; i++) {
         System.out.println("Podaj liczbę " + (i+1));
         liczby[i] = scanner.nextInt();
-        //outputArray[i] = scanner.next();
         }
+
+        for (int i=0; i<ile; i++) {
+            outputArray[i] = String.valueOf(liczby[i]);
+        }
+
+        String output = "Operacja : " + outputArray[0];
+        int wynik = liczby[0];
 
         switch (dzialanie) {
             case 1:
-                int wynik = 0;
-                String output = "";
-                for (int i=0; i<ile; i++){
-                    wynik += liczby[i];
+                for (int i=1; i<ile; i++){
+                   wynik += liczby[i];
+                   output = output+" + "+outputArray[i];
                 }
-                System.out.println(wynik);
-                System.out.println("dodawanie");
+                System.out.println(output);
+                System.out.println("Wynik: " + wynik);
                 break;
             case 2:
-                System.out.println("odejmowanie");
+                for (int i=1; i<ile; i++){
+                    wynik -= liczby[i];
+                    output = output+" - "+outputArray[i];
+                }
+                System.out.println(output);
+                System.out.println("Wynik :" + wynik);
                 break;
             case 3:
-                System.out.println("mnozenie");
+                for (int i=1; i<ile; i++){
+                    wynik *= liczby[i];
+                    output = output+" * "+outputArray[i];
+                }
+                System.out.println(output);
+                System.out.println("Wynik :" + wynik);
                 break;
             case 4:
-                System.out.println("dzielenie");
+                for (int i=1; i<ile; i++){
+                    wynik /= liczby[i];
+                    output = output+" / "+outputArray[i];
+                }
+                System.out.println(output);
+                System.out.println("Wynik :" + wynik);
                 break;
             default:
-                System.out.println("Nie podałeś liczby z przedziału 1-4");
+                System.out.println("Nie podałeś w pierwszym polu liczby z przedziału 1-4");
 
         }
 
